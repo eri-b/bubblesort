@@ -29,8 +29,8 @@ def bubble_sort_by(arr)
       left = x
       diff = yield(left, right)
       if diff > 0
-        arr[next_ind]=right
-        arr[index]=left
+        arr[next_ind]= "AHHHHH"
+        arr[index]= left
       end
   end
   puts arr
