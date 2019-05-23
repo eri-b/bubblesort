@@ -14,29 +14,26 @@ def bubble_sort(arr)
     puts arr
 end
 
-
-#bubble_sort([1, 3, 2, 3, 1])
-
-
-#bubble_sort([9, 5, 6, 3, 1, 345, 32, 4])
+bubble_sort([1, 3, 2, 3, 1])
 
 def bubble_sort_by(arr)
   len = arr.length
-  arr.each_with_index do |x, index|
-      break if index >= len - 1
-      next_ind = index.next
-      right = arr[next_ind]
-      left = x
-      diff = yield(left, right)
-      if diff > 0
-        arr[next_ind]= "AHHHHH"
-        arr[index]= left
-      end
+  len.times do
+    arr.each_with_index do |x, index|
+        break if index >= len - 1
+        next_ind = index.next
+        right = arr[next_ind]
+        left = x
+        diff = yield(left, right)
+        if diff > 0
+          arr[next_ind] = left
+          arr[index] = right
+        end
+    end
   end
   puts arr
-
 end
 
-bubble_sort_by([9, 5, 6, 3, 1, 345, 32, 4]) do |left, right|
-  left - right
+bubble_sort_by(["hi","hello","hey"]) do |left, right|
+  left.length - right.length
 end
