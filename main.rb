@@ -11,7 +11,7 @@ def bubble_sort(arr)
           end
       end
     end
-    puts arr
+    return arr
 end
 
 bubble_sort([1, 3, 2, 3, 1])
@@ -31,10 +31,9 @@ def bubble_sort_by(arr)
         end
     end
   end
-  puts arr
+  return arr
 end
 
 bubble_sort_by(["hi","hello","hey"]) do |left, right|
   left.length - right.length
-  # return left.length - right.length
 end
